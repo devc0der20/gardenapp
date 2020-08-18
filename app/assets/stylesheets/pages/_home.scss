@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
 
-body { 
+.home { 
+  height: 100vh;
+  padding-top: 100px;
+  text-align: center;
   background-image: linear-gradient(to bottom, rgba(245, 246, 252, 1.00), rgba(117, 19, 93, 0.0)), url('background_garden.jpg'); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -17,9 +20,4 @@ h1.headline {
 
 h2.subhead {
   font-size: 20px;
-}
-
-.home {
-  padding-top: 100px;
-  text-align: center;
 }

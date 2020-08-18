@@ -1,21 +1,15 @@
-/* Your card CSS file */
-.container {
- width: 500px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  padding: 40px;
-}
-
-.card-garden-top{
-  display: flex;
-  justify-content: space-between;
-}
-
 .card-garden {
+  margin: 0 20px 50px 20px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  color: $black;
+}
+
+.card-garden-top {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-garden-top > img {
@@ -59,6 +53,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .card-garden p {
   font-size: 12px;
   opacity: .7;

@@ -1,10 +1,9 @@
-<div class="index">
-  <div>
+<div class="gardens-index">
+  <nav></nav>
+  <div class="gardens-headline">
     <h1>select your garden</h1>
   </div>
-  <ul>
-    <% @gardens.each do |garden| %>
-      <li><%= garden.name %>, <%= garden.address %>, <%= garden.price %>€ //  <%= garden.description %></li>
-    <% end %>
-  </ul>
+  <div class="gardens">
+    <%= render @gardens %>
+  </div>
 </div>

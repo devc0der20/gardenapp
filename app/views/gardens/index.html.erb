@@ -1,0 +1,5 @@
+<ul>
+  <% @gardens.each do |garden| %>
+  <li><%= garden.name %>, <%= garden.address %>, <%= garden.price %>€ //  <%= garden.description %></li>
+  <% end %>
+</ul>

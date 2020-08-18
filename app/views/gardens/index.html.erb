@@ -1,4 +1,7 @@
 <div class="index">
+  <div>
+    <h1>select your garden</h1>
+  </div>
   <ul>
     <% @gardens.each do |garden| %>
       <li><%= garden.name %>, <%= garden.address %>, <%= garden.price %>€ //  <%= garden.description %></li>

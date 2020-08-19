@@ -3,18 +3,20 @@
     <img src="https://www.palheironatureestate.com/media/widgetkit/gardens-slide-02-9aa4f8926f5bcf8f9d51629252742ed4.jpg" />
       <div class="card-garden-top-infos">
         <div class="card-garden-top-infos-details">
-          <h2> € 120 </h2>
+          <h2> € <%= garden.price %></h2>
         </div>
         <div class="card-garden-top-infos-details">
-          <h2> m2 50 </h2>
+          <h2> m² 50 </h2>
         </div>
       </div>
   </div>
   <div class="card-garden-infos">
     <div>
-      <h2>Köpenicker Lake Gem</h2>
-      <p>Property with a view </p>
+      <h2><%= garden.name %></h2>
+      <p><%= garden.description %></p>
     </div>
-      <i class="fas fa-arrow-square-right"></i>
+    <%= link_to garden, class: "arrow-right" do %>
+      <i class="fas fa-arrow-right"></i>
+    <% end %>
   </div>
 </div>

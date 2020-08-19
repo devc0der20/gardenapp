@@ -5,10 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# User.destroy_all
+# Garden.destroy_all
+# Booking.destroy_all
 
-require 'faker'
 
-  # user = User.create(email:Faker::Internet.email)
+
+require 'open-uri'
+
+  user = User.create(email:Faker::Internet.email)
 10.times do
   user = User.new
   user.email = Faker::Internet.email
@@ -24,6 +29,8 @@ end
   garden.user_id = (1..10).to_a.sample
   garden.description = Faker::Marketing.buzzwords
   garden.address = Faker::Address.street_address
+  file = URI.open("http://res.cloudinary.com/dw63pmf1x/image/upload/v1597829982/cljtfotubtsehttehyjv.jpg")
+  garden.photo.attach(io: file, filename: "#{garden.name}" , content_type: 'image/jpg')
   garden.save!
   p garden
 end
@@ -37,4 +44,5 @@ end
   booking.save!
   p booking
 end
+
 

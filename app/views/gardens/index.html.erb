@@ -1,9 +1,40 @@
-<div class="gardens-index">
+<!-- <div class="gardens-index">
   <nav></nav>
   <div class="gardens-headline">
     <h1>select your garden</h1>
   </div>
   <div class="gardens">
-    <%= render @gardens %>
+  <%= render @gardens %>
+</div>
+</div> -->
+
+<% garden = @gardens.sample %>
+<%= cl_image_tag garden.photo.key, height: 300, width: 400, crop: :fill %>
+
+
+<% @gardens.each do |garden| %>
+
+<div class="card-garden">
+  <div class="card-garden-top">
+    <%= cl_image_tag garden.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="card-garden-top-infos">
+        <div class="card-garden-top-infos-details">
+          <h2><%= garden.price %></h2>
+        </div>
+        <div class="card-garden-top-infos-details">
+          <h2> m2 50 </h2>
+        </div>
+      </div>
+  </div>
+  <div class="card-garden-infos">
+    <div>
+      <h2><%= garden.address %></h2>
+      <p><%= garden.description %></p>
+    </div>
+      <i class="fas fa-arrow-square-right"></i>
   </div>
 </div>
+
+<% end %>
+
+

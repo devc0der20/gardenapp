@@ -1,7 +1,6 @@
-<%= puts @booking %>
-<%= puts @garden %>
 
-<%= simple_form_for [ @booking, @garden ] do |f| %>
+
+<%= simple_form_for [  @garden, @booking ] do |f| %>
 <%= f.input :start_date %>
 <%= f.input :end_date %>
 

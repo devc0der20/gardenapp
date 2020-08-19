@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= @garden.name %>
+      <%= simple_form_for [  @garden, @booking ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <% end %>
+    </div>
+  </div>
+</div>

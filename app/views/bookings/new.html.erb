@@ -1,8 +1,15 @@
-
-
-<%= simple_form_for [  @garden, @booking ] do |f| %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-
-<% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto">
+      <h5>User: <%= current_user.email %></h5>
+      <h5>Garden: <%= @garden.name %></h5>
+      <h5>Owner: <%= (@garden.user_id) %></h5>
+      <br>
+      <%= simple_form_for [ @garden, @booking ] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

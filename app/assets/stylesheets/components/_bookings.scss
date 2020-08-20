@@ -1,0 +1,42 @@
+.booking-new {
+  background-color: $black;
+  height: 100vh;
+  color: white;
+  padding-top: 100px;
+}
+
+.booking-new h1 {
+  font-size: 30px;
+}
+
+.booking-new h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.form {
+  width: 88%;
+  margin: 0 auto;
+}
+.card-garden-top-infos-details {
+ color: white ;
+ background-color: $black;
+ border-color: white;
+ border-radius: 8px;
+}
+
+.card-garden-top-infos-details h2 {
+  font-size: 16px;
+}
+
+.form-booking-new {
+  padding-top: 100px;
+}
+
+.btn {
+  margin-top: 50px;
+  background-color: #3B1CFF;
+  border-radius: 15px;
+  border-color: #3B1CFF;
+  font-size: 12px;
+}

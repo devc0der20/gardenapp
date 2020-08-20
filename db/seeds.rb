@@ -13,7 +13,7 @@
 
 require 'open-uri'
 
-  user = User.create(email:Faker::Internet.email)
+  # user = User.create(email:Faker::Internet.email)
 10.times do
   user = User.new
   user.email = Faker::Internet.email
@@ -23,13 +23,14 @@ require 'open-uri'
 end
 
 10.times do
+  url = ["http://res.cloudinary.com/dw63pmf1x/image/upload/v1597829982/cljtfotubtsehttehyjv.jpg", "https://res.cloudinary.com/dw63pmf1x/image/upload/v1597829991/ptuiyypuscqczidriuf0.jpg", "https://res.cloudinary.com/dw63pmf1x/image/upload/v1597829970/cjvd1yvu2zdkn5b9cfs5.jpg", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-aussenanlage_2da9ace5-52eb-4536-bb0d-04fc0cf31640", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-yoga_b089e12a-7652-4b08-b1be-795fdff1bffe", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-bungalows-aussen_81c3c528-bc07-4d29-85c5-ecf83c57d531", "https://res.cloudinary.com/tourasia/image/upload/w_1920/w_1920,h_768,c_crop,y_363/f_auto,q_auto:good,ar_2.5,c_crop/w_1920/pool-pool-by-night-93672.jpg"].sample
   garden = Garden.new
   garden.price = rand(155)
   garden.name = Faker::Address.city_prefix
   garden.user_id = (1..10).to_a.sample
   garden.description = Faker::Marketing.buzzwords
   garden.address = Faker::Address.street_address
-  file = URI.open("http://res.cloudinary.com/dw63pmf1x/image/upload/v1597829982/cljtfotubtsehttehyjv.jpg")
+  file = URI.open(url)
   garden.photo.attach(io: file, filename: "#{garden.name}" , content_type: 'image/jpg')
   garden.save!
   p garden

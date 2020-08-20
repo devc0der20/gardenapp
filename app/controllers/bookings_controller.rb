@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     garden = Garden.find(params[:id])
     booking.garden = garden
-    booking.user = current_user
+    booking.user = current_usert
     booking.save!
     redirect_to booking_path(booking)
     # if booking.save // else redirect_to 'bookings/new'_path(:booking)

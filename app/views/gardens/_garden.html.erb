@@ -1,6 +1,6 @@
 <div class="card-garden">
   <div class="card-garden-top">
-    <img src="https://www.palheironatureestate.com/media/widgetkit/gardens-slide-02-9aa4f8926f5bcf8f9d51629252742ed4.jpg" />
+     <%= cl_image_tag garden.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-garden-top-infos">
         <div class="card-garden-top-infos-details">
           <h2> € <%= garden.price %></h2>
@@ -20,3 +20,4 @@
     <% end %>
   </div>
 </div>
+

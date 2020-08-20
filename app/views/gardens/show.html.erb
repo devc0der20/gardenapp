@@ -11,6 +11,5 @@
 <% if user_signed_in? %>
 <%= link_to  "Book this garden?", garden_bookings_path %>
 <% else %>
-<%= link_to "sign in to book this garden",  new_user_session_path %>
+<%= link_to "sign in to book this garden", new_user_session_path %>
 <% end %>
-<%= button_to  "Book now", garden_bookings_path %>

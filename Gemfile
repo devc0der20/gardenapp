@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'cloudinary', '~> 1.12.0'
 
-
+gem 'geocoder'
 gem 'faker'
 
 gem 'devise'

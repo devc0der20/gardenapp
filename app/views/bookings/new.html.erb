@@ -1,15 +1,27 @@
-<div class="container">
+<div class="booking-new">
   <div class="row">
-    <div class="col-4 mx-auto">
-      <h5>User: <%= current_user.email %></h5>
-      <h5>Garden: <%= @garden.name %></h5>
-      <h5>Owner: <%= (@garden.user_id) %></h5>
+    <div class="form">
+      <h1> booking details </h1>
+        <div class="booking-top-info">
+          <h2> <%= @garden.name %> </h2>
+          <div class="card-garden-top-infos">
+            <div class="card-garden-top-infos-details">
+              <h2> € <%= @garden.price %> </h2>
+            </div>
+            <div class="card-garden-top-infos-details">
+              <h2> m² 50 </h2>
+            </div>
+          </div>
+      </div>
       <br>
-      <%= simple_form_for [ @garden, @booking ] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.submit %>
-      <% end %>
+      <div class="form-booking-new">
+        <%= simple_form_for [ @garden, @booking ] do |f| %>
+        <%= f.input :start_date %>
+        <br>
+        <%= f.input :end_date %>
+        <%= f.submit class: 'btn btn-primary'%>
+        <% end %>
+    </div>
     </div>
   </div>
 </div>

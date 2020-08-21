@@ -1,0 +1,90 @@
+.container {
+  max-width: 700px;
+}
+
+.container-show {
+  background-color: $black;
+  height: 100vh;
+  color: white;
+  padding-top: 100px;
+}
+
+.card-garden {
+  margin: 0 20px 50px 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  color: $black;
+}
+
+.card-garden-top {
+}
+
+.card-garden-top > img {
+  max-width: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  position: relative;
+}
+
+.card-garden-top > h2 {
+ font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  border-color: 1px;
+}
+
+.card-garden h2 {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+}
+
+.card-garden-top-infos {
+  display: flex;
+  position: absolute;
+  margin-right: 20px;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-right: 25px;
+}
+
+.card-garden-top-infos-details {
+  border: solid;
+  display: flex;
+  height: 50px;
+  width: 70px;
+  padding: 10px;
+  margin: 10px;
+  border-color: white;
+  background-color: white;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-garden p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-garden .card-garden-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  color: white;
+  background-color: #3B1CFF;
+  border-radius: 15px;
+  border-color: #3B1CFF;
+  font-size: 12px;
+}

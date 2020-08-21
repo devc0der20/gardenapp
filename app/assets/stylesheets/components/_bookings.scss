@@ -19,10 +19,10 @@
   margin: 0 auto;
 }
 .card-garden-top-infos-details {
- color: white ;
  background-color: $black;
  border-color: white;
  border-radius: 8px;
+ color: black;
 }
 
 .card-garden-top-infos-details h2 {
@@ -41,4 +41,6 @@
 
 .show-btn {
   color: white;
+  background-color: green !important;
+  border: 1px solid green !important;
 }

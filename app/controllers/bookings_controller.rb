@@ -2,10 +2,6 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @garden = Garden.find(@booking.garden_id)
-    @user = User.find(@booking.user_id)
-    @host = User.find(@garden.user_id)
-
   end
 
   def new

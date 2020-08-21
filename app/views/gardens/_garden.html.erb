@@ -1,6 +1,10 @@
 <div class="card-garden">
   <div class="card-garden-top">
+  <% if garden.photo.attached? %>
      <%= cl_image_tag garden.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= "No garden image attached." %>
+  <% end %>
       <div class="card-garden-top-infos">
         <div class="card-garden-top-infos-details">
           <h2> € <%= garden.price %></h2>

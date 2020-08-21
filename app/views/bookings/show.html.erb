@@ -1,12 +1,25 @@
-
 <%= render "shared/navbar" %>
-<div class="container">
+<div class="booking-new">
   <div class="row">
-    <div class="col">
-      <h1><%= @garden.name %></h1>
-      <p><%= @booking.start_date %> until <%= @booking.end_date %></p>
-      <h4><i class="fas fa-user"></i> <%= @user.email %></h4>
-      <h4><i class="fas fa-user-tie"></i> <%= @host.email %></h4>
-    </div>
+    <div class="form">
+      <h1> booking details </h1>
+        <div class="booking-top-info">
+          <h5> <%= @booking.garden.name %> </h5>
+          <p><%= @booking.start_date %> until <%= @booking.end_date %></p>
+          <div class="card-garden-top-infos">
+            <div class="card-garden-top-infos-details">
+              <h2> € <%= @booking.garden.price %> </h2>
+            </div>
+            <div class="card-garden-top-infos-details">
+              <h2> m² 78 </h2>
+            </div>
+          </div>
+      </div>
+        <br>
+        <h4><i class="fas fa-user"></i> <%= @booking.user.email %></h4>
+        <h4><i class="fas fa-user-tie"></i> <%= @booking.garden.name %></h4>
+        <%= link_to "Confirm Booking", gardens_path, class: "btn btn-success show-btn" %>
+        </div>
+     </div>
   </div>
 </div>

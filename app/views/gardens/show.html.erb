@@ -1,9 +1,6 @@
 <%= render "shared/navbar" %>
 <div class="container-show">
   <div class="container">
-<h1><%= @garden.name %></h1>
-<h2><%= @garden.price %>€</h2>
-
   <div class="card-garden">
 
     <div class="card-garden-top">
@@ -26,19 +23,17 @@
   </div>
     <i class="fas fa-arrow-square-right"></i>
  </div>
- <div class="btn btn-primary'">
+ <div class="call to action">
 <%= link_to gardens_path, class: "arrow-left" do %>
     <i class="fas fa-arrow-left"></i>
     <% end %>
     <% if user_signed_in? %>
-    <%= link_to  "Book this garden?", garden_bookings_path %>
+    <%= link_to "Book this garden", garden_bookings_path %>
     <% else %>
     <%= link_to "sign in to book this garden", new_user_session_path %>
     <% end %>
 </div>
 
 </div>
-
-
   </div>
 </div>

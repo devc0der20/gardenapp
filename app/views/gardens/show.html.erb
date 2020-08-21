@@ -21,19 +21,11 @@
      <p><%= @garden.address %></p>
      <p><%= @garden.description %></p>
   </div>
-    <i class="fas fa-arrow-square-right"></i>
+    <i class="fas fa-arrow-square-left"></i>
  </div>
- <div class="call to action">
-<%= link_to gardens_path, class: "arrow-left" do %>
-    <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <% if user_signed_in? %>
-    <%= link_to "Book this garden", garden_bookings_path %>
-    <% else %>
-    <%= link_to "sign in to book this garden", new_user_session_path %>
-    <% end %>
-</div>
 
-</div>
-  </div>
-</div>
+ <% if user_signed_in? %>
+  <%= link_to "Book this garden", garden_bookings_path, class: "btn btn-primary btn-lg call-to-action book-garden" %>
+<% else %>
+  <%= link_to "sign in to book this garden", new_user_session_path %>
+<% end %>

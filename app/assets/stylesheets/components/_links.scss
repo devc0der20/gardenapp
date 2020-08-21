@@ -4,3 +4,11 @@
     color: $purple-hover;
   }
 }
+
+.arrow-left {
+  color: $purple;
+  text-decoration: none;
+  &:hover {
+    color: $purple-hover;
+  }
+}

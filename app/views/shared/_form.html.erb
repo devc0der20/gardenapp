@@ -1,0 +1,42 @@
+<%= form_with url: check_password_path do |f| %>
+
+  <div class="form-group form-check"> 
+      <%= f.check_box :x, class: 'form-check-input round-border', id: 'cond_box', placeholder: 'pin eingeben', required: true %>
+      <%= f.label :x, class: "form-check-label", for: 'cond_box' %>
+      <%= render 'shared/acceptance', f:f, class:'inline' %>
+      <br>
+  </div>
+  <div class="form-group">
+    <%= f.label "PIN", for: 'pin'%> 
+    <%= f.password_field :pin, hint: "Die PIN ist 5 Zeichen lang.", label: "geben Sie die PIN ein", error: "Error in PIN", class: 'form-control', id: 'pin', required: true, minlength: '5', maxlength: '5' %> 
+    <div id="passwordHelpBlock" class="form-text">
+      <%= User.data[:password_hint] %>
+    </div>
+    <br>
+  </div>
+  <div>
+    <%# <%= f.submit "Anmelden", class: "btn btn-outline-primary" %> 
+    <%= button_to 'Anmelden', success_path, class: 'btn btn-outline-primary'%>
+  </div>
+  <br>
+  <% if User.data[:status] %>
+    Fault: <%= User.data[:status] %>
+  <% end %>
+
+<% end %>
+
+
+<%# <script>
+  const passwordHint = document.querySelector('#passwordHelpBlock');
+  const passwordField = document.querySelector('#pin')
+  if(passwordField){
+    passwordField.addEventListener('change', (event) => {
+      if (event.target.value.length !== 5 ){
+        passwordHint.innerHTML = "PIN ist nicht 5 Zeichen lang!"
+      }
+  })
+  }
+</script> %>
+
+
+

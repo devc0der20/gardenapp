@@ -1,8 +1,21 @@
-<div class="home">
-  <h1 class="headline">air garden & grill</h1>
-  </br>
-  <h2 class="subhead"> Find your safe spot</h2>
-  <p>
-    <%= link_to "Explore", gardens_path, class: "btn btn-primary btn-lg call-to-action" %>
-  </p>
+<div class="border-bottom">
+  <div class="container justify-content-between align-items-center">
+    <%= render 'shared/header' %>
+  </div>
 </div>
+<div class="container justify-content-around align-items-center">
+  <div class="row justify-content-center">
+    <div class="col-sm col-lg-8 border p-3 form" >
+      <h2><%= User.data[:title] %></h2>
+      <%= render 'shared/form' %>
+    </div>
+    <div class="col-sm col-lg-4 hidden-sm">
+      <h4 class="p-3"><%= User.data[:info_title] %></h4>
+      <p class="p-3"><%= User.data[:info_text] %></p>
+    </div>
+  </div>
+</div>
+<div class="container justify-content-between align-items-center">
+  <%= render 'shared/footer' %>
+</div>
+ 

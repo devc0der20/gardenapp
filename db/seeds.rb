@@ -6,44 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # User.destroy_all
-# Garden.destroy_all
-# Booking.destroy_all
-
-
-
-require 'open-uri'
-
+# require 'open-uri'
   # user = User.create(email:Faker::Internet.email)
-10.times do
-  user = User.new
-  user.email = Faker::Internet.email
-  user.password = "1234567"
-  user.save!
-  p user
-end
+  
+  User.create!({
+    email: 'test@user.com',
+    password: "123456",
+    pin: '1test'
+  })
 
-10.times do
-  url = ["http://res.cloudinary.com/dw63pmf1x/image/upload/v1597829982/cljtfotubtsehttehyjv.jpg", "https://res.cloudinary.com/dw63pmf1x/image/upload/v1597829991/ptuiyypuscqczidriuf0.jpg", "https://res.cloudinary.com/dw63pmf1x/image/upload/v1597829970/cjvd1yvu2zdkn5b9cfs5.jpg", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-aussenanlage_2da9ace5-52eb-4536-bb0d-04fc0cf31640", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-yoga_b089e12a-7652-4b08-b1be-795fdff1bffe", "https://res.cloudinary.com/midoffice/image/upload/w_1400/v1/production/5d5a70dd23ca8c00281c801c/tauchen-thailand-phuket-sea-bees-palm-garden-resort-bungalows-aussen_81c3c528-bc07-4d29-85c5-ecf83c57d531", "https://res.cloudinary.com/tourasia/image/upload/w_1920/w_1920,h_768,c_crop,y_363/f_auto,q_auto:good,ar_2.5,c_crop/w_1920/pool-pool-by-night-93672.jpg"].sample
-  garden = Garden.new
-  garden.price = rand(155)
-  garden.name = "#{Faker::Address.city_prefix} #{Faker::Address.community}, #{Faker::Address.state}"
-  garden.user_id = (1..10).to_a.sample
-  garden.description = Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4)
-  garden.address = Faker::Address.street_address
-  file = URI.open(url)
-  garden.photo.attach(io: file, filename: "#{garden.name}" , content_type: 'image/jpg')
-  garden.save!
-  p garden
-end
+puts "created one user with pin"
 
-20.times do
-  booking = Booking.new
-  booking.start_date = Faker::Date.between(from: '2014-09-23', to: '2014-09-25')
-  booking.end_date = Faker::Date.between(from: '2014-09-26', to: '2014-09-27')
-  booking.user_id = rand(1..10)
-  booking.garden_id = rand(1..10)
-  booking.save!
-  p booking
-end
 
 
